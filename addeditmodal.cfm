@@ -1,4 +1,8 @@
 <cfform action="home.cfm" method="post">
+		
+		<cfoutput>#URL.Page#</cfoutput>
+		<cfoutput>#URL.Id#</cfoutput>
+
 		<div>Product Name</div>
 		<cfinput type="text" name="name" size="60">
 		<div>Description</div>
@@ -10,6 +14,6 @@
 		<div>Standard Cost</div>
 		<cfinput type="text" name="cost" size="60">
 
-		<cfinput type="submit" name="SubmitForm" value=""> 
-		<cfinput type="button" name="CloseButton" value="Cancel" onClick="ColdFusion.Window.hide('Window1')">
+		<cfinput type="submit" name="SubmitForm" value="#URL.Page#"> 
+		<cfinput type="button" name="CloseButton" value="Cancel" onClick="ColdFusion.Window.destroy('Window1',true)">
 </cfform>
