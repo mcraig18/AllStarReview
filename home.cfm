@@ -1,7 +1,9 @@
 <DOCTYPE  html>
 <html>
 
-<cfinclude template="header.cfm">
+<div id="header">
+	<cfinclude template="header.cfm">
+</div>
 
 <body>
 	<h1> All Star Review </h1>
@@ -19,6 +21,7 @@
 				<cfcol header = "Name" align = "Left" width = 2 text= "<a href ='http://localhost:8500/AllStarReview/details.cfm?Id=#Id#'>#Name#</a>">
 				<cfcol header = "Number" align = "Left" width = 2 text= "#ProductNumber#">
 				<cfcol header = "Description" align = "Left" width = 2 text= "#Description#">
+				<cfcol header = "Rating" align = "Left" width = 2 text= "#AverageRating#">
 			</cftable>
 		<cfelse>
 			No results were found.

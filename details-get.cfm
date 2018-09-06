@@ -16,3 +16,10 @@
 	FROM ProductReview
 	WHERE ProductId = #URL.Id#
 </cfquery> 
+
+<cfquery name="AverageRating" datasource="AllStarReview"> 
+	SELECT AVG(Rating) as AverageRating
+	FROM ProductReview
+	WHERE ProductId = #URL.Id#
+</cfquery> 
+
