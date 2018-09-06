@@ -10,10 +10,9 @@
 
 	<br>
 	<cfform name="test"> 
-	<cfinput type="button" name="AddButton" value="Add Product" onClick="ColdFusion.Window.create('Window1', 'Add Product', 'home.cfm', {height:600,width:600,modal:true,closable:true,draggable:false,resizable:true,center:true,initshow:true,minheight:500,minwidth:500 })"> 
+	<cfinput type="button" name="AddButton" value="Add Product" onClick="ColdFusion.Window.create('Window1', 'Add Product', 'addeditmodal.cfm', {height:600,width:600,modal:true,closable:true,draggable:false,resizable:true,center:true,initshow:true,minheight:500,minwidth:500 })"> 
 	</cfform>
 	<br>
-
 
 	<cfform action="dashboard.cfm" method="post">
 		<cfinput type="text" name="SearchParam" size="30" placeholder="Search for a product...">
