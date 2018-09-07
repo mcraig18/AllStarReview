@@ -6,7 +6,12 @@
 <body>
 	<cfinclude template="details-get.cfm">
 
+	<cfinclude template="picture-get.cfm">
+
 	<h1><cfoutput query="ProductList">#Name#</cfoutput></h1>
+	<cfoutput> #picture# </cfoutput>
+	<img src="#picture#" alt="hm">
+
 
 	<h3>Description</h3>
 	<cfoutput query="ProductList">#Description#</cfoutput>
