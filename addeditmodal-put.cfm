@@ -1,20 +1,28 @@
+<cfif #FORM.id# gt 0>
+    <cfquery result="UpdateResult" datasource="AllStarReview">
+        UPDATE Product
+        SET Name = '#FORM.name#', ProductNumber = '#FORM.productNumber#', Description = '#FORM.description#', StandardCost = #FORM.price#
+        WHERE Id = #FORM.id#
+    </cfquery>
+<cfelse>
+    <cfquery result="InsertResult" datasource="AllStarReview">
+        INSERT INTO Product
+        (
+            Name, ProductNumber, Description, StandardCost, ListPrice
+        )
+        VALUES
+        (
+            <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="#FORM.name#" />,
+            <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="#FORM.productNumber#" />,
+            <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="#FORM.description#" />,
+            <cfqueryparam cfsqltype="CF_SQL_DECIMAL" value="#FORM.price#" />,
+            <cfqueryparam cfsqltype="CF_SQL_DECIMAL" value="#FORM.price#" />
+        )          
+    </cfquery>
+</cfif>
 
 <p>
-
-    you successfully added / editted
+    System successfully <cfoutput>#FORM.page#</cfoutput> a record.
     <input type="button" name="CloseButton" value="Close" onClick="ColdFusion.Window.destroy('Window1',true)">
 </p>
-<!--- <cfquery result="InsertResult" datasource="AllStarReview">
-    INSERT INTO AllStarReview
-    (
-        Name, ProductNumber, Description, StandardCost
-    )
-    VALUES
-    (
-        <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="#Name#" />,
-        <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="#ProductNumber#" />,
-        <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="#Description#" />,
-        <cfqueryparam cfsqltype="CF_SQL_DECIMAL" value="#StandardCost#" />
-    )  
-</cfquery> --->
 

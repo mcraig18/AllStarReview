@@ -10,7 +10,7 @@
 
 	<h1><cfoutput query="ProductList">#Name#</cfoutput></h1>
 	<cfoutput> #picture# </cfoutput>
-	<img src="#picture#" alt="hm">
+	<img src="#picture#">
 
 
 	<h3>Description</h3>

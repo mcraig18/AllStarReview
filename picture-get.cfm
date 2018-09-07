@@ -19,6 +19,6 @@
 	<cfset picture = "stars/stars_4.png">
 <cfelseif avRating gte 4 && avRating lt 4.5>
 	<cfset picture = "stars/stars_4-5.png">
-<cfelse>
+<cfelseif avRating gte 4.5 && avRating lt 5>
 	<cfset picture = "stars/stars_5.png">
 </cfif>
