@@ -38,7 +38,13 @@
 		<cfinput type="text" name="productNumber" size="60" value="#productNumber#">
 		<div>Product Category</div>
 		<select name="categories">
-				<cfoutput query="FullCategoryList"><option value="#fullId#">#fullName#</option></cfoutput>
+				<cfoutput query="FullCategoryList">
+					<cfif fullId eq catid>
+						<option value="#FullId#" selected >#fullName#</option>
+					<cfelse>
+						<option value="#fullId#">#fullName#</option>
+					</cfif>
+				</cfoutput>
 		</select>
 		<div>Standard Cost</div>
 		<cfinput type="text" name="price" size="60" value="#price#">
